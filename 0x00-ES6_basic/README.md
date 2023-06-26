@@ -1,2 +1,3 @@
 # Learning ES6 Basics
-## Var
+## const and let
+## Clock scope
