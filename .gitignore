@@ -1,4 +1,6 @@
 node_modules
 /node_modules
+0x00-ES6_basic/node_modules
+0x00-ES6_basic/main.js
 0x01-ES6_promise/node_modules
 0x01-ES6_promise/main.js
