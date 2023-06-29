@@ -18,6 +18,7 @@ module.exports = {
     },
     plugins: ['jest'],
     rules: {
+      'linebreak-style': 0,
       'max-classes-per-file': 'off',
       'no-underscore-dangle': 'off',
       'no-console': 'off',
