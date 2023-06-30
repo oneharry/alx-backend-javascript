@@ -1,13 +1,13 @@
 import Car from './10-car';
 
 export default class EVCar extends {
-  constructor(brand, motor, color, range) {
-    super(brand, motor, color);
-    this._range = range;
-  }
+    constructor(brand, motor, color, range) {
+        super(brand, motor, color);
+        this._range = range;
+      }
+    
 
   cloneCar() {
-    const newCar = super.cloneCar();
-    return newCar;
+    return new super.constructor[Symbol.species];
   }
 }
