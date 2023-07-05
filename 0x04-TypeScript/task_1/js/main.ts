@@ -20,7 +20,7 @@ interface StudentClass {
   }
   
 
-class StudentClass {
+class StudentClass implements StudentClass {
     firstName: string;
     lastName: string;
 

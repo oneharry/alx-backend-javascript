@@ -1,39 +1,48 @@
-import Teacher from "../main";
-
-interface Directors extends Teacher {
-    numberOfReports: number;
-}
-interface printTeacherFun {
-    (fName: string, lName: string): string;
-}
-const printTeacher: printTeacherFun = (fName, lName) => {
-    return `${fName.substring(0, 1)}. ${lName}`;
+interface DirectorInterface {
+    workFromHome(): string;
+    getCoffeeBreak(): string;
+    workDirectorTasks(): string;
 }
 
-interface StudentClassConstructor {
-    new (firstName: string, lastName: string): StudentClass;
+interface TeacherInterface {
+    workFromHome(): String;
+    getCoffeeBreak(): string;
+    workTeacherTasks(): string;
 }
 
-interface StudentClass {
-    workOnHomework(): string;
-    displayName(): string;
-  }
-  
-
-class StudentClass {
-    firstName: string;
-    lastName: string;
-
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+class Director implements DirectorInterface {
+    workFromHome(): string {
+        return 'Working from home';
     }
 
-    workOnHomework(): string {
-        return 'Currently working';
+    getCoffeeBreak(): string {
+        return 'Getting a coffee break';
     }
 
-    displayName(): string {
-        return this.firstName
+    workDirectorTasks(): string {
+        return 'Getting to director tasks';
     }
+}
+
+
+class Teacher implements TeacherInterface {
+    workFromHome(): String {
+        return 'Cannot work from home';
+    }
+
+    getCoffeeBreak(): string {
+        return 'Getting a coffee break';
+    }
+
+    workTeacherTasks(): string {
+        return 'Getting to director tasks';
+    }
+}
+
+
+function createEmployee(salary: string | number): Director | Teacher {
+    if(typeof salary === 'number' && salary < 500) {
+        return new Teacher();
+    }
+    return new Director();
 }
