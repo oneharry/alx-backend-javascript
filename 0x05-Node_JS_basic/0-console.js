@@ -1,4 +1,4 @@
 function displayMessage(str) {
-    console.log(str);
+    process.stdout.write(str);
 };
 module.exports = displayMessage;

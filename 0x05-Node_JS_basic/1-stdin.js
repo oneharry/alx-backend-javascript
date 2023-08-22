@@ -1,14 +1,9 @@
-const { read } = require('fs');
-const readline = require('readline');
+process.stdout.write("Welcome to Holberton School, what is your name?\n");
+process.stdin.on("readable", () => {
+    const line = process.stdin.read();
+    line && process.stdout.write(`Your name is: ${line}`);
+});
 
-const rl =readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
-rl.question("Welcome to Holberton School, what is your name?\n", (name) => {
-    console.log(`Your name is: ${name}`);
-
-    rl.close()
-    console.log("This important software is now closing");
+process.stdin.on("close", () => {
+    process.stdout.write("This important software is now closing");
 });
