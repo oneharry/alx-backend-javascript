@@ -57,13 +57,16 @@ describe("DIVIDE", function() {
         assert.equal(calculateNumber("DIVIDE", 6, 2), 3);
     })
     it("division to give fraction", function() {
-        assert.equal(calculateNumber("DIVIDE", 5, 2), 3);
+        assert.equal(calculateNumber("DIVIDE", 5, 2), 2.5);
     })
-    it("sum of  int and float < 0.5 fraction", function() {
-        assert.equal(calculateNumber("DIVIDE", 1, 3), "Error");
+    it("division to give 0", function() {
+        assert.equal(calculateNumber("DIVIDE", 1, 2), 0.5);
     })
-    it("sum of  int and float = 0.5 fraction", function() {
-        assert.equal(calculateNumber("DIVIDE", 0, 2), "Error");
+    it("division zero by int", function() {
+        assert.equal(calculateNumber("DIVIDE", 0, 2), 0);
+    })
+    it("division zero by int", function() {
+        assert.equal(calculateNumber("DIVIDE", 5.7, 0), "Error");
     })
     it("sub with non number", function() {
         assert.equal(calculateNumber("DIVIDE", "5", 2), "Args must be number");

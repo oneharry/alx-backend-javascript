@@ -7,11 +7,10 @@ const calculateNumber = (type, a, b) => {
             return (Math.round(a) + Math.round(b));
         }
         if(type === 'DIVIDE') {
-            const div = (Math.round(a) / Math.round(b));
-            if(Math.round(div) === 0) {
+            if(Math.round(b) === 0) {
                 return "Error";
             }
-            return Math.round(div);
+            return (Math.round(a) / Math.round(b));
         }
         if(type === 'SUBSTRACT') {
             return (Math.round(a) - Math.round(b));
