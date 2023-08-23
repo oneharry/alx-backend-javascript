@@ -1,8 +1,9 @@
 const calculateNumber = (type, a, b) => {
+
+    if(typeof type !== 'string') {
+        return "type must be a string";
+    }
     if(typeof a == 'number' && typeof b == 'number') {
-        if(typeof type !== 'string') {
-            return "Type must be string: SUM | DIVIDE | SUBSTRACT"
-        }
         if(type === 'SUM') {
             return (Math.round(a) + Math.round(b));
         }
@@ -14,7 +15,8 @@ const calculateNumber = (type, a, b) => {
         }
         if(type === 'SUBSTRACT') {
             return (Math.round(a) - Math.round(b));
-        } 
+        }
+        return "type must be string: SUM | DIVIDE | SUBSTRACT"
     }
     return "Args must be number";
 }

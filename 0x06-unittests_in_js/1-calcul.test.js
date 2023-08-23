@@ -4,6 +4,15 @@ const { futimes } = require("fs");
 
 
 describe("SUM", function() {
+    it("is type a string", function() {
+        assert.equal(calculateNumber([2, 4], 9, 2), "type must be a string")
+    })
+    it("check type is not valid", function() {
+        assert.equal(calculateNumber("TIMES", 2, 4), "type must be string: SUM | DIVIDE | SUBSTRACT");
+    })
+    it("check type in lowercase", function() {
+        assert.equal(calculateNumber("sum", 2, 4), "type must be string: SUM | DIVIDE | SUBSTRACT");
+    })
     it("returns sum of 2 integers", function() {
         assert.equal(calculateNumber("SUM", 2, 4), 6);
     })
@@ -79,6 +88,9 @@ describe("SUBSTRACT", function() {
     })
     it("sub float from int", function() {
         assert.equal(calculateNumber("SUBSTRACT", 5, 2.1), 3);
+    })
+    it("sub float from int", function() {
+        assert.equal(calculateNumber("SUBSTRACT", 1.4, 4.5), -4);
     })
     it("substract to give -ve number", function() {
         assert.equal(calculateNumber("SUBSTRACT", 1, 3), -2);
